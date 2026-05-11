@@ -1,0 +1,708 @@
+/* ========================================
+   NEARCART - MAIN STYLESHEET
+   ======================================== */
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #f5f5f5;
+    color: #1a1a1a;
+    padding-bottom: 70px;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: white;
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.search-bar {
+    background: #f0f0f0;
+    margin: 12px 16px;
+    padding: 12px 16px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #999;
+}
+
+/* ===== BOTTOM NAVIGATION ===== */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 16px;
+    border-top: 1px solid #eee;
+    z-index: 100;
+}
+
+.nav-item {
+    text-align: center;
+    cursor: pointer;
+    color: #999;
+    transition: 0.2s;
+}
+
+.nav-item.active {
+    color: #6366f1;
+}
+
+.nav-icon {
+    font-size: 1.3rem;
+}
+
+.nav-label {
+    font-size: 0.7rem;
+    margin-top: 2px;
+}
+
+/* ===== PRODUCT CARD ===== */
+.product-card {
+    background: white;
+    margin: 12px 16px;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.product-card:active {
+    transform: scale(0.98);
+}
+
+.product-icon {
+    width: 70px;
+    height: 70px;
+    background: #f0f0f0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.product-price {
+    font-weight: 700;
+    color: #6366f1;
+    margin-top: 4px;
+}
+
+.product-seller {
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.product-distance {
+    font-size: 0.72rem;
+    color: #888;
+    margin-top: 2px;
+}
+
+/* ===== DETAIL SCREEN ===== */
+.detail-container {
+    padding: 16px;
+}
+
+.detail-image {
+    background: #f0f0f0;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    margin-bottom: 16px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    color: #6366f1;
+    font-weight: 600;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+    transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn-primary:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1.5px solid #6366f1;
+    color: #6366f1;
+    padding: 12px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+    transition: all 0.2s;
+}
+
+.btn-outline:hover {
+    background: #6366f1;
+    color: white;
+}
+
+/* ===== SCREENS ===== */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* ===== SCREEN HEADER ===== */
+.screen-header {
+    background: white;
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.back-arrow {
+    cursor: pointer;
+    color: #6366f1;
+    font-size: 1.2rem;
+    padding: 2px 6px;
+}
+
+/* ===== HOME HERO ===== */
+.home-hero {
+    padding: 14px 16px 4px;
+}
+
+.home-hero h2 {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.home-hero p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 2px;
+}
+
+.section-title {
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 8px 16px 4px;
+}
+
+/* ===== ADDRESS CARD ===== */
+.address-card {
+    background: white;
+    margin: 12px 16px;
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.address-card.selected {
+    border-color: #6366f1;
+    background: #f0f0ff;
+}
+
+.add-address-btn {
+    margin: 8px 16px;
+    padding: 12px;
+    background: #f0f0f0;
+    border-radius: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: #6366f1;
+}
+
+.address-form-card {
+    background: white;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+}
+
+.addr-input {
+    width: 100%;
+    padding: 10px 14px;
+    margin: 5px 0;
+    border: 1.5px solid #eee;
+    border-radius: 12px;
+    font-family: inherit;
+    outline: none;
+}
+
+.addr-input:focus {
+    border-color: #6366f1;
+}
+
+/* ===== CART ===== */
+.cart-item {
+    background: white;
+    margin: 8px 16px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.qty-btn {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid #6366f1;
+    border-radius: 50%;
+    background: transparent;
+    color: #6366f1;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.price-details {
+    background: white;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.total-row {
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+    font-weight: bold;
+}
+
+/* ===== ORDERS ===== */
+.order-card {
+    background: white;
+    margin: 12px 16px;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.order-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.status-delivered {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.order-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.order-tab {
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #666;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.order-tab.active {
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    color: white;
+}
+
+/* ===== CHAT ===== */
+.chat-messages {
+    height: 60vh;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.message {
+    margin-bottom: 14px;
+    max-width: 70%;
+}
+
+.message.sent {
+    margin-left: auto;
+}
+
+.message-content {
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.message.sent .message-content {
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    color: white;
+}
+
+.message.received .message-content {
+    background: #f0f0f0;
+    color: #1a1a1a;
+}
+
+.chat-input {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1.5px solid #eee;
+    border-radius: 25px;
+    outline: none;
+    font-family: inherit;
+}
+
+.chat-input input:focus {
+    border-color: #6366f1;
+}
+
+/* ===== PAYMENT ===== */
+.payment-option {
+    background: white;
+    margin: 8px;
+    padding: 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    border: 1.5px solid #eee;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.payment-option:hover {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+/* ===== PROFILE ===== */
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 16px;
+}
+
+/* ===== LOGIN ===== */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-card {
+    background: white;
+    border-radius: 30px;
+    padding: 32px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.login-logo {
+    font-size: 3rem;
+}
+
+.login-card h2 {
+    font-size: 1.8rem;
+    margin: 8px 0 4px;
+}
+
+.login-tagline {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.role-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.role-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1.5px solid #ddd;
+    background: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.role-btn.active {
+    background: #6366f1;
+    color: white;
+    border-color: #6366f1;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1.5px solid #ddd;
+    border-radius: 30px;
+    font-family: inherit;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #6366f1;
+}
+
+.signup-input {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1.5px solid #ddd;
+    border-radius: 30px;
+    font-family: inherit;
+    outline: none;
+}
+
+.signup-input:focus {
+    border-color: #6366f1;
+}
+
+.or-divider {
+    margin: 15px 0;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.link-primary {
+    color: #6366f1;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.link-primary:hover {
+    text-decoration: underline;
+}
+
+/* ===== OTP ===== */
+.otp-inputs {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.otp-digit {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1.5px solid #ddd;
+    border-radius: 12px;
+    background: white;
+    font-family: inherit;
+    font-weight: 600;
+    outline: none;
+}
+
+.otp-digit:focus {
+    border-color: #6366f1;
+}
+
+.resend-btn {
+    background: none;
+    border: none;
+    color: #6366f1;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.timer {
+    color: #888;
+    font-size: 0.7rem;
+}
+
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    display: none;
+}
+
+/* ===== QR MODAL ===== */
+.qr-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.qr-content {
+    background: white;
+    border-radius: 30px;
+    padding: 30px;
+    text-align: center;
+    max-width: 340px;
+    width: 90%;
+}
+
+.qr-code img {
+    width: 200px;
+    height: 200px;
+    margin: 20px 0;
+    border-radius: 12px;
+}
+
+.upi-id {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .otp-digit {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .product-card {
+        margin: 8px 12px;
+    }
+    
+    .cart-item {
+        margin: 6px 12px;
+    }
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 2px;
+}

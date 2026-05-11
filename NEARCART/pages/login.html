@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>NearCart - Login</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-logo">🛍️</div>
+            <h2>NearCart</h2>
+            <p class="login-tagline">Your Nearby Marketplace</p>
+
+            <div class="role-buttons">
+                <button class="role-btn active" onclick="selectRole('customer')">Customer</button>
+                <button class="role-btn" onclick="selectRole('seller')">Seller</button>
+            </div>
+
+            <div id="alertMsg" class="alert"></div>
+
+            <div id="loginDiv">
+                <div class="input-group">
+                    <input type="email" id="loginEmail" placeholder="Email Address">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" placeholder="Password">
+                </div>
+                <button class="btn-primary" onclick="doLogin()">Login →</button>
+            </div>
+
+            <div class="or-divider">OR</div>
+
+            <div>
+                <a onclick="showSignupForm()" class="link-primary">Create new account →</a>
+            </div>
+
+            <div id="signupDiv" style="display: none; margin-top: 20px;">
+                <input type="text" id="signupName" class="signup-input" placeholder="Full Name">
+                <input type="email" id="signupEmail" class="signup-input" placeholder="Email Address">
+                <input type="tel" id="signupMobile" class="signup-input" placeholder="Mobile Number">
+                <input type="password" id="signupPassword" class="signup-input" placeholder="Password (6+ chars)">
+                <input type="text" id="shopAddress" class="signup-input" placeholder="Shop Address (for sellers)">
+                
+                <div id="signupOtpDiv" style="display: none;">
+                    <div class="otp-inputs">
+                        <input type="text" class="otp-digit" maxlength="1" id="su1">
+                        <input type="text" class="otp-digit" maxlength="1" id="su2">
+                        <input type="text" class="otp-digit" maxlength="1" id="su3">
+                        <input type="text" class="otp-digit" maxlength="1" id="su4">
+                        <input type="text" class="otp-digit" maxlength="1" id="su5">
+                        <input type="text" class="otp-digit" maxlength="1" id="su6">
+                    </div>
+                    <button id="signupResendBtn" class="resend-btn" disabled>Resend OTP</button>
+                    <div id="signupTimer" class="timer"></div>
+                    <button class="btn-primary" onclick="verifySignupOTP()">Verify & Sign Up →</button>
+                </div>
+                
+                <button class="btn-primary" id="sendSignupBtn" onclick="sendSignupOTP()">Send OTP →</button>
+                <div style="margin-top: 12px;">
+                    <a onclick="showLoginForm()" class="link-primary">← Back to Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+</body>
+</html>
